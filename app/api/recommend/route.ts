@@ -4,7 +4,7 @@ import { getRecommendations } from "./utils"
 
 export async function POST(req: NextRequest) {
   try {
-    const { title, count = 5 } = (await req.json()) as { title?: string; count?: number }
+    const { title, count = 20 } = (await req.json()) as { title?: string; count?: number }
 
     if (!title) {
       return NextResponse.json({ error: "Movie title is required" }, { status: 400 })
